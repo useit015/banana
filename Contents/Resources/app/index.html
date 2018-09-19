@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Banana</title>
+	<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+		video {
+			width: 100%;
+			height: 100%;
+			margin-top: -10px;
+		}
+	</style>
+	<script src="konami.js"></script>
+	<script>
+
+		var easter_egg = new Konami();
+		easter_egg.code = function() {
+			require('electron').ipcRenderer.send('konami', 'code');
+		};
+	easter_egg.load();
+	</script>
+  </head>
+  <body>
+    <video src="Banana.mp4" autoplay loop></video>
+  </body>
+</html>

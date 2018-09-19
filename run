@@ -1,0 +1,8 @@
+#! /bin/sh
+
+cd ~/Movies/l7wa/Contents/MacOS
+./Banana
+cd ..
+cd ..
+cd ..
+chmod -r *
