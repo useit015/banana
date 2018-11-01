@@ -7,6 +7,8 @@
 		html, body {
 			margin: 0;
 			padding: 0;
+			background: black;
+			cursor: none;
 			overflow: hidden;
 		}
 		video {
@@ -17,15 +19,12 @@
 	</style>
 	<script src="konami.js"></script>
 	<script>
-
 		var easter_egg = new Konami();
-		easter_egg.code = function() {
-			require('electron').ipcRenderer.send('konami', 'code');
-		};
+		easter_egg.code = () => require('electron').ipcRenderer.send('konami', 'code');
 	easter_egg.load();
 	</script>
   </head>
   <body>
-    <video src="Banana.mp4" autoplay loop></video>
+    <video src="banana.mp4" autoplay loop></video>
   </body>
 </html>
