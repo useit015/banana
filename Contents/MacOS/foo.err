@@ -3,3 +3,37 @@
 [warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
 [warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
 [warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
+2019-01-18 21:42 Banana[42702] (FSEvents.framework) server_gone_StreamRef_callback: ERROR: FSEvents_connect() => unknown error code (124)
+2019-01-18 21:42 Banana[42702] (FSEvents.framework) server_gone_StreamRef_callback: failed to reconnect to server! (kr 0x7c)
+2019-01-18 21:42:52.956 Banana[42702:1583620] HIToolbox: received notification of WindowServer event port death.
+2019-01-18 21:42:52.956 Banana[42702:1583620] port matched the WindowServer port created in BindCGSToRunLoop
+2019-01-18 21:42:57.483 Banana[42702:1583620] *** Assertion failure in -[_NSWindowFullScreenTransition enterFullScreenTransitionWithPresentationOptions:options:], /Library/Caches/com.apple.xbs/Sources/AppKit/AppKit-1504.83.101/AppKit.subproj/NSWindowFullScreenTransition.m:1006
+2019-01-18 21:42:57.533 Banana[42702:1583620] *** Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'transitionedWid not set in enterFullScreenTransitionWithPresentationOptions:options:'
+*** First throw call stack:
+(
+	0   CoreFoundation                      0x00007fff9555c2cb __exceptionPreprocess + 171
+	1   libobjc.A.dylib                     0x00007fffaa37e48d objc_exception_throw + 48
+	2   CoreFoundation                      0x00007fff95561042 +[NSException raise:format:arguments:] + 98
+	3   Foundation                          0x00007fff96fa9be0 -[NSAssertionHandler handleFailureInMethod:object:file:lineNumber:description:] + 195
+	4   AppKit                              0x00007fff93a0dca3 -[_NSFullScreenTransition enterFullScreenTransitionWithPresentationOptions:options:] + 191
+	5   AppKit                              0x00007fff93a112b6 -[_NSWindowFullScreenTransition enterFullScreenTransitionForWindow:options:] + 481
+	6   AppKit                              0x00007fff9386952a -[NSWindow _enterFullScreenMode:options:] + 340
+	7   AppKit                              0x00007fff938693c7 -[NSWindow _enterFullScreenMode:options:implicitlyTile:] + 150
+	8   AppKit                              0x00007fff932c8eae -[NSWindow enterFullScreenMode:] + 123
+	9   Electron Framework                  0x00000001095f4242 _ZN4atom15NativeWindowMac13SetFullScreenEb + 66
+	10  Electron Framework                  0x00000001095f4d1c _ZN4atom15NativeWindowMac8SetKioskEb + 108
+	11  Electron Framework                  0x00000001095cbb18 _ZN4atom3api6Window8SetKioskEb + 24
+	12  Electron Framework                  0x00000001095d07c2 _ZN4base8internal15RunnableAdapterIMN4atom3api6WindowEFvbEE3RunIJbEEEvPS4_DpOT_ + 34
+	13  Electron Framework                  0x00000001095d078f _ZN4base8internal12InvokeHelperILb0EvNS0_15RunnableAdapterIMN4atom3api6WindowEFvbEEEE8MakeItSoIJPS5_bEEEvS8_DpOT_ + 31
+	14  Electron Framework                  0x00000001095d0760 _ZN4base8internal7InvokerINS_13IndexSequenceIJEEENS0_9BindStateINS0_15RunnableAdapterIMN4atom3api6WindowEFvbEEEFvPS8_bEJEEENS0_12InvokeHelperILb0EvSB_EESD_E3RunEPNS0_13BindStateBaseEOSC_Ob + 32
+	15  Electron Framework                  0x00000001095d0666 _ZNK4base8CallbackIFvPN4atom3api6WindowEbELNS_8internal8CopyModeE1EE3RunES4_b + 38
+	16  Electron Framework                  0x00000001095d05c6 _ZN4mate8internal7InvokerINS0_13IndicesHolderIJLm0ELm1EEEEJPN4atom3api6WindowEbEE18DispatchToCallbackEN4base8CallbackIFvS7_bELNS9_8internal8CopyModeE1EEE + 22
+	17  Electron Framework                  0x00000001095d047c _ZN4mate8internal10DispatcherIFvPN4atom3api6WindowEbEE18DispatchToCallbackERKN2v820FunctionCallbackInfoINS8_5ValueEEE + 172
+	18  libnode.dylib                       0x000000010ef3d821 _ZN2v88internal25FunctionCallbackArguments4CallEPFvRKNS_20FunctionCallbackInfoINS_5ValueEEEE + 369
+	19  libnode.dylib                       0x000000010ef753c7 _ZN2v88internal8Builtins17InvokeApiFunctionENS0_6HandleINS0_10HeapObjectEEENS2_INS0_6ObjectEEEiPS6_ + 1879
+	20  libnode.dylib                       0x000000010ef7fb9a _ZN2v88internal8BuiltinsD1Ev + 42490
+	21  ???                                 0x000025108d7092a7 0x0 + 40753022669479
+	22  ???                                 0x000025108dad698e 0x0 + 40753026656654
+	23  ???                                 0x000025108dad6453 0x0 + 40753026655315
+)
+libc++abi.dylib: terminating with uncaught exception of type NSException
